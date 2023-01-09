@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\TesteCastGroup.API.props" />
+</Project>

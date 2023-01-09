@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\TesteCastGroup.MVC.props" />
+</Project>

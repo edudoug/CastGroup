@@ -1,0 +1,41 @@
+﻿@model IEnumerable<TesteCastGroup.MVC.Models.ContaViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Contas</h1>
+<p>
+    @Html.ActionLink("Criar Nova Conta", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.ActionLink("Alterar Conta", "Edit", new { id = item.ContaId }) |
+                @Html.ActionLink("Deletar Conta", "Delete", new { id = item.ContaId })
+            </td>
+        </tr>
+    }
+    <tr>
+        <td>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </td>
+    </tr>
+</table>
